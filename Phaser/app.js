@@ -6,7 +6,7 @@ function preload(){
 }
 
 function create(){
-	game.add.sprite(400,300,'star')
+	game.add.sprite(400,300,'star');
 }
 
 function update(){
