@@ -1,5 +1,4 @@
-var game = new Phaser.game(800,600, Phaser.AUTO,'',
-	{preload:preload, create:create, update: update});
+var game = new Phaser.game(800,600, Phaser.AUTO,'',{preload:preload, create:create, update: update});
 
 function preload(){
 	game.load.image('star', 'assets/star.png');
