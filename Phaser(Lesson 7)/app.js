@@ -14,30 +14,38 @@ function preload(){
 
 function create(){
 	game.physics.startSystem(Phaser.Physics.ARCADE);
+	
 	//Create Sky
 	game.add.sprite(0,0,'sky');
+	
 	//Create Group of Platforms
 	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
+	
 	//Create Ground
 	var ground = platforms.create(0,550,'ground');
 	ground.scale.setTo(2,2);
 	ground.body.immovable = true;
+	
 	//Create Ledges
 	var ledge = platforms.create(400,400,'ground');
 	ledge.body.immovable = true;
 	ledge = platforms.create(-150,250,'ground');
 	ledge.body.immovable = true;
+	
 	//Create Player Sprite
 	player = game.add.sprite(32,400,'dude');
+		
 		//Animate Player Sprite
 		player.animations.add('left',[0,1,2,3],25,true);
 		player.animations.add('right',[5,6,7,8],25,true);
 		player.body.bounce.y = 0.2;
 		player.body.gravity.y = 300;
 		player.body.collideWorldBounds = true;
+		
 		//Create Enemies
 		enemy1 = game.add.sprite(760,20,'baddie');
+			
 			//Animate Enemy
 			enemy1.animations.add('left',[0,1],10,true);
 			enemy1.animations.add('right',[2,3],10,true);
@@ -46,6 +54,7 @@ function create(){
 			enemy1.body.gravity.y = 500;
 			enemy1.body.collideWorldBounds = true;
 		enemy2 = game.add.sprite(10,20,'baddie');
+			
 			//Animate Enemy2
 			enemy2.animations.add('left',[0,1],10,true);
 			enemy2.animations.add('right',[2,3],10,true);
@@ -68,6 +77,7 @@ function create(){
 		//Create the Stars
 		stars = game.add.physicsGroup();
 		stars.enableBody = true;
+		
 		//We will create 12 stars evenly spaced
 		for(var 1 = 0; 1 < 12; i++){
 			var star = stars.create(i * 70,0,'star');
@@ -77,6 +87,7 @@ function create(){
 
 		//set text style
 		var style = {font: "bold 32px Arial", fill: "#fff", boundsAllignH: "center", boundsAlignV: "middle"};
+		
 		//position score
 		scorelabel = game.add.text(-60,0, "Your score is : ", style);
 		scoretext = game.add.text(70,0,score,style);
