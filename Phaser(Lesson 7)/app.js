@@ -39,6 +39,7 @@ function create(){
 		//Animate Player Sprite
 		player.animations.add('left',[0,1,2,3],25,true);
 		player.animations.add('right',[5,6,7,8],25,true);
+		game.physics.arcade.enable(player);
 		player.body.bounce.y = 0.2;
 		player.body.gravity.y = 300;
 		player.body.collideWorldBounds = true;
@@ -49,7 +50,7 @@ function create(){
 			//Animate Enemy
 			enemy1.animations.add('left',[0,1],10,true);
 			enemy1.animations.add('right',[2,3],10,true);
-			game.physics,arcade.enable(enemy1);
+			game.physics.arcade.enable(enemy1);
 			enemy1.body.bounce.y = 0.2;
 			enemy1.body.gravity.y = 500;
 			enemy1.body.collideWorldBounds = true;
@@ -58,7 +59,7 @@ function create(){
 			//Animate Enemy2
 			enemy2.animations.add('left',[0,1],10,true);
 			enemy2.animations.add('right',[2,3],10,true);
-			game.physics,arcade.enable(enemy2);
+			game.physics.arcade.enable(enemy2);
 			enemy2.body.bounce.y = 0.2;
 			enemy2.body.gravity.y = 500;
 			enemy2.body.collideWorldBounds = true;
@@ -66,7 +67,7 @@ function create(){
 			//Animate Enemy3
 			enemy3.animations.add('left',[0,1],10,true);
 			enemy3.animations.add('right',[2,3],10,true);
-			game.physics,arcade.enable(enemy3);
+			game.physics.arcade.enable(enemy3);
 			enemy3.body.bounce.y = 0.2;
 			enemy3.body.gravity.y = 500;
 			enemy3.body.collideWorldBounds = true;
