@@ -162,7 +162,7 @@ function update(){
 
 	//Collide Stars with platforms
 	game.physics.arcade.collide(star,platforms);
-	game.physics.arcade.overlap(player, star, collectStar, null, this);
+	game.physics.arcade.overlap(player, stars, collectStar, null, this);
 	game.physics.arcade.overlaps(player, enemy1, loseLife, null, this);
 	game.physics.arcade.overlaps(player, enemy2, loseLifeLeft, null, this);
 	game.physics.arcade.overlaps(player, enemy3, loseLife, null, this);
@@ -181,7 +181,7 @@ function collectStar(player,star){
 		scoretext.setText(score);
 
 		//Create New Star
-		star = star.create(Math.floor(Math.random()*750), 0, 'star');
+		star = stars.create(Math.floor(Math.random()*750), 0, 'star');
 		star.body.gravity.y = 200;
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 }
