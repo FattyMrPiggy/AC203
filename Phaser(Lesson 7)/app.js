@@ -181,7 +181,7 @@ function collectStar(player,star){
 		scoretext.setText(score);
 
 		//Create New Star
-		star = stars.create(Math.floor(Math.random()*750), 0, 'star');
+		star = star.create(Math.floor(Math.random()*750), 0, 'star');
 		star.body.gravity.y = 200;
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 }
