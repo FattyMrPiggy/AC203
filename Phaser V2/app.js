@@ -209,7 +209,7 @@ function collectStar(player,star){
 
 		//V2 — create health pack if collected multiple of 10
 		if(score % 10 == 0){
-			healthpack = healths.create(Math.floor(Math.random()*750),0,'health');
+			healthpack = healthsee.create(Math.floor(Math.random()*750),0,'health');
 			healthpack.body.gravity.y = 200;
 		}
 }
@@ -255,7 +255,7 @@ function endGame(){
 
 	//call restart game
 	var restart = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
-	restart.onDown.addOnce(restart);
+	restart.onDown.addOnce(restartGame);
 }
 
 function restartGame(){
