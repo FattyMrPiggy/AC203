@@ -97,8 +97,8 @@ function create(){
 		var style = {font: "bold 32px Arial", fill: "#fff", boundsAllignH: "center", boundsAlignV: "middle"};
 		
 		//position score
-		scorelabel = game.add.text(-60,0, "Your score is : ", style);
-		scoretext = game.add.text(70,0,score,style);
+		scorelabel = game.add.text(0,0, "Your score is : ", style);
+		scoretext = game.add.text(100,0,score,style);
 		scorelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 		scoretext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 
@@ -107,8 +107,8 @@ function create(){
 		scoretext.setTextBounds(0,520,800,100);
 
 		//Doing same thing for lives
-		lifelabel = game.add.text(-300,0,"Lives : ", style);
-		lifetext = game.add.text(-240,0,life,style);
+		lifelabel = game.add.text(300,0,"Lives : ", style);
+		lifetext = game.add.text(240,0,life,style);
 		lifelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 		lifetext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 		lifelabel.setTextBounds(0,0,800,100);
