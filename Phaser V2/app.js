@@ -90,8 +90,8 @@ function create(){
 		}
 
 		//V2 — create health pack group
-		health = game.add.physicsGroup();
-		health.enableBody = true;
+		healths = game.add.physicsGroup();
+		healths.enableBody = true;
 
 		//set text style
 		var style = {font: "bold 32px Arial", fill: "#fff", boundsAllignH: "center", boundsAlignV: "middle"};
@@ -111,8 +111,8 @@ function create(){
 		lifetext = game.add.text(-240,0,life,style);
 		lifelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 		lifetext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
-		lifelabel.setTextBounds(0,520,800,100);
-		lifetext.setTextBounds(0,520,800,100);
+		lifelabel.setTextBounds(0,0,800,100);
+		lifetext.setTextBounds(0,0,800,100);
 
 		//V2 — Game over text
 		goText = game.add.text(0,0,'',style);
@@ -181,8 +181,8 @@ function update(){
 	game.physics.arcade.overlap(player, enemy3, loseLife, null, this);
 
 	//Collide played with health pack
-	game.physics.arcade.collide(health, platforms);
-	game.physics.arcade.overlap(player, health, collectHealth, null, this);
+	game.physics.arcade.collide(healths, platforms);
+	game.physics.arcade.overlap(player, healths, collectHealth, null, this);
 
 	//V2 -check if no more lives
 	if(life < 0){
@@ -209,7 +209,7 @@ function collectStar(player,star){
 
 		//V2 — create health pack if collected multiple of 10
 		if(score % 10 == 0){
-			healthpack = health.create(Math.floor(Math.random()*750),0,'health');
+			healthpack = healths.create(Math.floor(Math.random()*750),0,'health');
 			healthpack.body.gravity.y = 200;
 		}
 }
