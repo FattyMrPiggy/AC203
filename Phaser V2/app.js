@@ -209,7 +209,7 @@ function collectStar(player,star){
 
 		//V2 — create health pack if collected multiple of 10
 		if(score % 10 == 0){
-			healthpack = healthsee.create(Math.floor(Math.random()*750),0,'health');
+			healthpack = healths.create(Math.floor(Math.random()*750),0,'health');
 			healthpack.body.gravity.y = 200;
 		}
 }
